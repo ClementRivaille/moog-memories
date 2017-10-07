@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="./bundle.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div id="app">
+      <header id="title">
+        <h1>MOOG MEMORIES</h1>
+        <div id="loading">Loading&hellip;&nbsp;<i class="fa fa-spinner fa-spin"></i></div>
+        <div id="error" class="disabled" aria-hidden="true">
+          Your browser doesn't seem able to run the game! You may try to open it with Firefox or Chrome.
+        </div>
+      </header>
+
+      <div id="controls">
+        <ul class="beginning control-panel hidden disabled" aria-hidden="true">
+          <li class="sound-control beg-bass relative">
+            <button tabindex="2" type="button" disabled="true" aria-pressed="false" aria-label="globe" onclick="conductor.trigger('beg-bass')"><i class="fa fa-globe"></i></button disabled="true">
+          </li>
+          <li class="sound-control beg-sun relative">
+            <button tabindex="3" type="button" disabled="true" aria-pressed="false" aria-label="sun" onclick="conductor.trigger('beg-sun')"><i class="fa fa-sun-o"></i></button disabled="true">
+          </li>
+          <li class="sound-control beg-boing trigger">
+            <button tabindex="4" type="button" disabled="true" aria-pressed="false" aria-label="gamepad" onclick="conductor.trigger('beg-boing')"><i class="fa fa-gamepad"></i></button disabled="true">
+          </li>
+          <li class="sound-control intro-noise active">
+            <button tabindex="5" type="button" disabled="true" aria-pressed="true" aria-label="cog" onclick="conductor.trigger('intro-noise')"><i class="fa fa-cog"></i></button disabled="true">
+          </li>
+          <li class="sound-control beginning-space">
+            <button tabindex="6" type="button" disabled="true" aria-pressed="false" aria-label="rocket" onclick="conductor.trigger('beginning-space')"><i class="fa fa-rocket"></i></button disabled="true">
+          </li>
+          <li class="sound-control beg-drums">
+            <button tabindex="7" type="button" disabled="true" aria-pressed="false" aria-label="magnet" onclick="conductor.trigger('beg-drums')"><i class="fa fa-magnet"></i></button disabled="true"></button disabled="true">
+          </li>
+          <li class="sound-control beg-guitar">
+            <button tabindex="8" type="button" disabled="true" aria-pressed="false" aria-label="bolt" onclick="conductor.trigger('beg-guitar')"><i class="fa fa-bolt"></i></button disabled="true">
+            <input tabindex="9" class="slider" aria-label="guitar-slider" type="range" min="0" max="1" step="0.01" value="0" oninput="conductor.setEffect('beg-guitar', 'filter', this.value)">
+         </li>
+        </ul>
+
+        <ul class="orbit control-panel hidden disabled" aria-hidden="true">
+          <li class="sound-control orbit-solo relative">
+            <button tabindex="11" type="button" disabled="true" aria-pressed="false" aria-label="eye" onclick="conductor.trigger('orbit-solo')"><i class="fa fa-eye"></i></button disabled="true">
+          </li>
+          <li class="sound-control orbit-alien relative">
+            <button tabindex="12" type="button" disabled="true" aria-pressed="false" aria-label="star" onclick="conductor.trigger('orbit-alien')"><i class="fa fa-star"></i></button disabled="true">
+          </li>
+          <li class="sound-control orbit-echo relative">
+            <button tabindex="13" type="button" disabled="true" aria-pressed="false" aria-label="cubes" onclick="conductor.trigger('orbit-echo')"><i class="fa fa-cubes"></i></button disabled="true">
+          </li>
+          <li class="sound-control orbit-minor">
+            <button tabindex="14" type="button" disabled="true" aria-pressed="false" aria-label="compass" onclick="conductor.trigger('orbit-minor'); conductor.trigger('orbit-major');"><i class="fa fa-compass"></i></button disabled="true"></button disabled="true">
+          </li>
+          <li class="sound-control orbit-bells trigger">
+            <button tabindex="15" type="button" disabled="true" aria-pressed="false" aria-label="bell" onclick="conductor.trigger('orbit-bells')"><i class="fa fa-bell-o"></i></button disabled="true">
+          </li>
+          <li class="sound-control orbit-noise relative">
+            <button tabindex="16" type="button" disabled="true" aria-pressed="false" aria-label="paperclip" onclick="conductor.trigger('orbit-noise')"><i class="fa fa-paperclip"></i></button disabled="true">
+          </li>
+          <li class="sound-control orbit-waves">
+            <button tabindex="17" type="button" disabled="true" aria-pressed="false" aria-label="diamond" onclick="conductor.trigger('orbit-waves')"><i class="fa fa-diamond"></i></button disabled="true">
+            <input tabindex="18" class="slider" aria-label="diamond-slider" type="range" min="0" max="1" step="0.01" value="0" oninput="conductor.setEffect('orbit-waves', 'filter', this.value)">
+          </li>
+        </ul>
+      </div>
+
+      <div id="navigation">
+        <div class="start nav-panel hidden" aria-hidden="true">
+          <button tabindex="1" type="button" disabled="true" onclick="conductor.start()"><i class="fa fa-play"></i>&nbsp;Beginning</button disabled="true">
+        </div>
+        <div class="beginning hidden nav-panel disabled" aria-hidden="true">
+          <button tabindex="10" type="button" disabled="true" onclick="conductor.changeSection(1)"><i class="fa fa-play"></i>&nbsp;Leave</button disabled="true">
+        </div>
+        <div class="orbit hidden nav-panel disabled" aria-hidden="true">
+          <button tabindex="19" type="button" disabled="true" onclick="conductor.changeSection(2)"><i class="fa fa-play"></i>&nbsp;End</button disabled="true">
+        </div>
+      </div>
+
+      <div id="end" class="hidden" aria-hidden="true">
+        <span>In memory of Jean-Jacques Perrey</span>
+        <span>1929-2016</span>
+      </div>
+
+    </div>
+  </body>
+</html>

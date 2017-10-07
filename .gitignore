@@ -1,0 +1,9 @@
+node_modules
+dev
+sfx
+build
+*.sublime-project
+*.sublime-workspace
+bundle.js
+*.map
+npm-debug.log

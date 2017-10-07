@@ -1,0 +1,188 @@
+@font-face {
+  font-family: 'arista';
+  src: url('assets/Arista2.0Alternate.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body, #app {
+  height: 100%;
+  margin: 0px;
+}
+
+#app {
+  background-color: #c7ae32;
+  transition: background-color 1.5s ease;
+  -webkit-transition: background-color 1.5s ease;
+}
+
+#title h1 {
+  margin: 0px;
+  margin-bottom: 1em;
+  font-size: 4.5em;
+  text-align: center;
+  color: #fdd9d0;
+  text-shadow: 10px 10px 5px #191616;
+  font-family: arista;
+}
+
+#loading, #error {
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+  -webkit-transition: all .6s; /* Safari */
+  transition: opacity all .6s;
+}
+
+.disabled {
+  display: none !important;
+}
+
+#app.beginning {
+  background-color: #102a65;
+}
+#app.orbit {
+  background-color: #0b5451;
+}
+#app.end {
+  background-color: #501e4a;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.nav-panel, .control-panel {
+  -webkit-transition: all .6s; /* Safari */
+  transition: opacity all .6s;
+  overflow: hidden;
+}
+
+button {
+  background-color: white;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 1em;
+  padding: 0.7em;
+  font-family: sans-serif;
+  -webkit-transition: background-color .2s ease, color .2s ease;
+  transition: background-color .2s ease, color .2s ease;
+  border: 0em solid;
+  margin: 0em 2em 0em 2em;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #dedede;
+}
+
+button:disabled {
+  cursor: auto;
+}
+
+[data-whatintent="mouse"] button:focus {
+  outline:none;
+}
+[data-whatintent="mouse"] button::-moz-focus-inner {
+  border: 0;
+}
+
+.nav-panel {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-panel {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  align-items: start;
+  justify-content: center;
+  list-style: none;
+}
+
+.sound-control {
+  display: grid;
+  align-items: center;
+}
+
+.sound-control.active button {
+  background-color: #bb1313;
+  color: white;
+}
+.sound-control.active.relative button {
+  background-color: #0a6092;
+}
+
+@keyframes trigger {
+  from {background-color: #359624; color: white;}
+  to {background-color: white; color: black;}
+}
+.sound-control.active.trigger button {
+  background-color: white;
+  color: black;
+  animation-name: trigger;
+  animation-duration: .5s;
+  -webkit-animation-name: trigger;
+  -webkit-animation-duration: .5s;
+}
+
+#controls {
+  margin-bottom: 3em;
+}
+
+#end {
+  color: white;
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  -webkit-transition: all .6s; /* Safari */
+  transition: opacity all .6s;
+  font-family: sans-serif;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 0.2em;
+    border-radius: 5px;   
+    background: #dcdcdc;
+    outline: none;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+[data-whatintent="keyboard"] .slider:focus {
+  background: #9fa726;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0.5em;
+    height: 1em;
+    border-radius: 50%; 
+    background: #dcdcdc;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 0.5em;
+    height: 1em;
+    border-radius: 50%;
+    background: #dcdcdc;
+    cursor: pointer;
+}
+
